@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->string('name');
             $table->integer('proxy_id');
             $table->integer('site_id');
             $table->text('site_cookie')->nullable();

@@ -13,8 +13,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
-        return response()->json(["test"=>"index"]);
+        $profile = Profile::get();
+        return response()->json(["status"=>"200","list"=>$profile]);
     }
 
     /**
