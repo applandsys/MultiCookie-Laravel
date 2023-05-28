@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -29,8 +30,15 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return response()->json(["test"=>"store"]);
+        $input =  $request->input();
+        $create = Profile::create([
+            'name'=> $input['name'],
+            'user_id'=> auth()->id(),
+            'site_id'=> $input['site'],
+            'proxy_id'=> $input['proxy'],
+            'status'=> 'inactive',
+        ]);
+        return response()->json(["status"=>"200","create-id"=>$create]);
     }
 
     /**

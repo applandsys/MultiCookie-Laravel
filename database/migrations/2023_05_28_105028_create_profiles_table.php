@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('proxy_id');
-            $table->text('site_cookie');
-            $table->integer('sync_count');
-            $table->enum('status',['active','inactive']);
+            $table->integer('site_id');
+            $table->text('site_cookie')->nullable();
+            $table->integer('sync_count')->nullable();
+            $table->enum('status',['active','inactive'])->default('inactive');
             $table->timestamps();
         });
     }
