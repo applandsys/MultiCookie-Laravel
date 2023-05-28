@@ -22,7 +22,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return response()->json(["test"=>"create"]);
+        return response()->json(["status"=>"200","method"=>"create=put"]);
     }
 
     /**
