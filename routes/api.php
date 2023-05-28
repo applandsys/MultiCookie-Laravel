@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\api\v1\RegisterController;
+use App\Http\Controllers\api\v1\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::controller(RegisterController::class)->group(function(){
 });
 
 Route::middleware('auth:sanctum')->group( function () {
-   // Route::resource('products', ProductController::class);
+   Route::resource('profile', ProfileController::class);
 });
 
 Route::get('test',function(){
