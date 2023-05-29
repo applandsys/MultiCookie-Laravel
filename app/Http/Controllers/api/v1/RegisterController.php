@@ -28,7 +28,7 @@ class RegisterController extends BaseController
         $success["token"] = $user->createToken("Myapp")->plainTextToken();
         $success["user_data"] = $user;
 
-        return $this->sendResponse( $success,"Usser Created Successfully");
+        return $this->sendResponse( $success,"User Created Successfully");
     }
 
     public function login(Request $request): JsonResponse

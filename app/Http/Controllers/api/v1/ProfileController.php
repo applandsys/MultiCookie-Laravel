@@ -4,17 +4,18 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Profile;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():JsonResponse
     {
-        $profile = Profile::get();
-        return response()->json(["status"=>"200","list"=>$profile]);
+        $result = Profile::get();
+        return $this->sendResponse($result,'Profile List Fetch Success');
     }
 
     /**
