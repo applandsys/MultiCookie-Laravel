@@ -9,4 +9,8 @@ class Profile extends Model
 {
     use HasFactory;
     protected $fillable = ['name','user_id','site_id','proxy_id','site_cookie','sync_count','status'];
+    public function site(){
+        return $this->belongsTo(Site::class);
+    }
+
 }

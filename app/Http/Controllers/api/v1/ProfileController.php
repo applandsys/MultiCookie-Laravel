@@ -14,7 +14,7 @@ class ProfileController extends BaseController
      */
     public function index():JsonResponse
     {
-        $result = Profile::get();
+        $result = Profile::with('site')->get();
         return $this->sendResponse($result,'Profile List Fetch Success');
     }
 

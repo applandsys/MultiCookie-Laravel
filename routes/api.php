@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\api\v1\RegisterController;
 use App\Http\Controllers\api\v1\ProfileController;
+use App\Http\Controllers\api\v1\CookieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::controller(RegisterController::class)->group(function(){
 
 Route::middleware('auth:sanctum')->group( function () {
    Route::resource('profile', ProfileController::class);
+   Route::resource('cookie', CookieController::class);
 });
 
 Route::get('test',function(){
